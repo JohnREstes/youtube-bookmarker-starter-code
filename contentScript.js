@@ -64,6 +64,7 @@
         } else {
             console.error('Parent element with class "slds-grid slds-page-header__detail-row" not found.');
         }
+        console.log('')
     }
 
 })();
