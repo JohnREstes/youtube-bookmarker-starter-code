@@ -2,8 +2,15 @@
   "name": "SF Autofill",
   "version": "0.1.0",
   "description": "Contact Time Saver",
-  "permissions": ["storage", "tabs"],
-  "host_permissions": ["https://*.lightning.force.com/*"],
+  "permissions": [
+    "storage",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.lightning.force.com/*",
+    "https://applications.zoom.us/*"
+  ],
   "background": {
     "service_worker": "background.js"
   },
@@ -21,7 +28,7 @@
         "assets/delete.png",
         "assets/save.png"
       ],
-      "matches": ["https://*.lightning.force.com/*"]
+      "matches": ["https://*.lightning.force.com/*", "https://applications.zoom.us/*"]
     }
   ],
   "action": {

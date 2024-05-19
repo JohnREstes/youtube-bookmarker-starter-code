@@ -49,6 +49,7 @@
         button.addEventListener('click', () => {
             const selectedOption = select.value;
             console.log(`Selected option: ${selectedOption}`);
+            contactCandidate();
         });
     
         // Append the dropdown and button to the container
@@ -67,6 +68,43 @@
         console.log('')
     }
 
+    function contactCandidate(){
+        // Get the link element by its attributes
+        const emailLink = document.querySelector('a[data-tab-name="SendEmail"][class="tabHeader"]');
+        const aElement = document.querySelector('a[lwc-1pphsnbjek5]');
+        // Step 1: Find the element you want to click
+        //const elementToClick = document.querySelector('/* CSS selector for the element to click */');
+
+
+        if (emailLink) {
+            // Simulate a click on the link
+            emailLink.click();
+            
+        } else {
+            console.log('Link not found');
+        }
+        if (aElement) {
+            // Step 2: Create and dispatch a click event on the element
+            const clickEvent = new MouseEvent('click', {
+                view: window,
+                bubbles: true,
+                cancelable: true
+            });
+            aElement.dispatchEvent(clickEvent);
+        } else {
+            console.error('Element to click not found.');
+        }
+    }
+    window.addEventListener('load', () => {
+        const iframes = document.querySelectorAll('iframe');
+        iframes.forEach((iframe) => {
+          iframe.addEventListener('load', () => {
+            chrome.runtime.sendMessage({ message: 'iframeLoaded' });
+          });
+        });
+      });      
+      
+      
 })();
 
 const getTime = t => {
