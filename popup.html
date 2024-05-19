@@ -1,10 +1,48 @@
-<link href="popup.css" rel="stylesheet" type="text/css" />
-<script type="module" src="popup.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="popup.js"></script>
+    <link rel="stylesheet" href="popup.css">
+    <title>Contact Form</title>
+</head>
+<body>
+    <h2>Contact Form</h2>
+    <form id="contactForm">
+        <label for="contactSelect">Select Contact:</label>
+        <select id="contactSelect" name="contact">
+            <option value="first">First Contact</option>
+            <option value="second">Second Contact</option>
+            <option value="third">Third Contact</option>
+        </select>
+        <br><br>
+        <label for="smsContent">Contact of SMS:</label>
+        <textarea id="smsContent" name="smsContent" rows="6" cols="30"></textarea>
+        <br><br>
+        <label for="emailContent">Content of Email:</label>
+        <textarea id="emailContent" name="emailContent" rows="6" cols="30"></textarea>
+        <br><br>
+        <span class="checkboxSpan hidden">
+          <input type="checkbox" id="removeOldTask" name="removeOldTask">
+          <label for="removeOldTask">Remove Old Task</label>
+        </span>
+        <br>
+        <span class="checkboxSpan">
+          <input type="checkbox" id="createNewTask" name="createNewTask">
+          <label for="createNewTask">Create New Task</label>
+        </span>
+        <br>
+        <span class="checkboxSpan">
+          <input type="checkbox" id="promptForPhoneCall" name="promptForPhoneCall">
+          <label for="promptForPhoneCall">Prompt for Phone Call</label>
+        </span>
+        <br><br>
+        <input type="submit" id="saveButton" value="Save">
+    </form>
 
-<div class="container">
-  <div>
-    <div class="title">Your bookmarks for this video</div>
-
-    <div class="bookmarks" id="bookmarks"></div>
-  </div>
-</div>
+    <div class="overlay" id="overlay">
+      <img src="/assets/save.png" alt="Saving...">
+    </div>
+</body>
+</html>
