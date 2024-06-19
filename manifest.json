@@ -5,12 +5,11 @@
   "permissions": [
     "storage",
     "tabs",
-    "scripting"
-  ],
-  "host_permissions": [
-    "https://*.lightning.force.com/*",
+    "scripting",
+    "activeTab",
     "https://applications.zoom.us/*"
   ],
+  "host_permissions": ["https://*.lightning.force.com/*"],
   "background": {
     "service_worker": "background.js"
   },
@@ -28,7 +27,7 @@
         "assets/delete.png",
         "assets/save.png"
       ],
-      "matches": ["https://*.lightning.force.com/*", "https://applications.zoom.us/*"]
+      "matches": ["https://*.lightning.force.com/*"]
     }
   ],
   "action": {
